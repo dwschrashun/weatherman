@@ -1,0 +1,14 @@
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <img src="favicon.ico" class="pull-left img-responsive logo">
+      <a href="#" ui-sref="home" class="navbar-brand">Weatherman</a>
+    </div>
+    <form class="navbar-form navbar-right" ng-submit="getWeather(city, country)">
+      <label class="navbar-text">Find Weather Forecasts For:</label>
+      <input class="form-control" type="text" placeholder="City" ng-model="city" />
+      <input class="form-control" type="text" placeholder="Country" ng-model="country" />
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</nav>
