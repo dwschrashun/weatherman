@@ -7,7 +7,10 @@
     <form class="navbar-form navbar-right" ng-submit="getWeather(city, country)">
       <label class="navbar-text">Find Weather Forecasts For:</label>
       <input class="form-control" type="text" placeholder="City" ng-model="city" />
-      <input class="form-control" type="text" placeholder="Country" ng-model="country" />
+      <select id="country-drop" ng-model="country">
+        <option selected>--Select Country--</option>
+        <option ng-repeat="country in countries">{{country.name}}</option>
+      </select>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
