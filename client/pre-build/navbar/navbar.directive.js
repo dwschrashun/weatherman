@@ -6,7 +6,7 @@ app.directive("navbar", function($stateParams, $rootScope, WeatherFactory, Count
 			scope.getWeather = function (city, country) {
 				return WeatherFactory.findWeather(city, country.code)
 					.then(function(results) {
-						$rootScope.$broadcast("newWeather", {weather: results});
+						$rootScope.$broadcast("newWeather", results);
 					});
 			};
 			scope.countries = CountryFactory.countries;

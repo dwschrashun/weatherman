@@ -2,11 +2,12 @@
 require('babel/register');
 
 var chalk = require('chalk');
-var Promise = require('bluebird');
 
+// Returns a promise from ./db/index.js
 var port = (process.env.PORT || 4545);
-// Start the server
 var app = require('./app');
+  
+// Start the server
 
 (new Promise(function(resolve, reject) {
   app.listen(port, function() {

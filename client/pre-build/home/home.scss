@@ -1,6 +1,40 @@
 #home {
-  blockquote {
-    font-size: 14px;
-    font-style: italic;
-  }
+
 }
+
+#header-row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#forecast {
+	border: 1px black solid;
+	padding-right: -15px;
+}
+
+.header-cell {
+	border: 2px black solid;
+	padding: 0;
+	.header-button {
+		width: 100%;
+		a {
+			color: black;
+
+		}
+	}
+}
+
+#table {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.day {
+	width: 100%;
+	margin: 12px 0px;
+	border-bottom: 1px green solid;
+	div {
+		text-align: center;
+	}
+}
+

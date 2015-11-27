@@ -1,30 +1,53 @@
 <navbar></navbar>
 <section id="home" class="container">
-	<div id="table">
-		<div class="row" id="header">
-			<div class="col-md-3 col-lg-3">Date</div>
-			<div class="col-md-1 col-lg-1"></div>
-			<div class="col-md-2 col-lg-2">Morning</div>
-			<div class="col-md-2 col-lg-2">Day</div>
-			<div class="col-md-2 col-lg-2">Evening</div>
-			<div class="col-md-2 col-lg-2">Night</div>
+	<div id="header">
+		<h1>Weather Forecast for {{weather.originalCity | capitalize}}, {{weather.country}}</h1>
+	</div>
+	<div id="table" class="container">
+		<div class="row btn-group btn-group-justified" role="group" id="header-row">
+			<div class="col-md-4 col-lg-4 header-cell">
+				<div class="btn header-button" ng-click="changeSort('index')">
+					<a href="">Date</a>
+				</div>
+			</div>
+			<div class="col-md-2 col-lg-2 header-cell">
+				<div class="btn header-button" ng-click="changeSort('morn')">
+					<a href="">Morning</a>
+				</div>
+			</div>
+			<div class="col-md-2 col-lg-2 header-cell">
+				<div class="btn header-button" ng-click="changeSort('noon')">
+					<a href="">Daytime</a>
+				</div>
+			</div>
+			<div class="col-md-2 col-lg-2 header-cell">
+				<div class="btn header-button" ng-click="changeSort('eve')">
+					<a href="">Evening</a>
+				</div>
+			</div>
+			<div class="col-md-2 col-lg-2 header-cell">
+				<div class="btn header-button" ng-click="changeSort('night')">
+					<a href="">Night</a>
+				</div>
+			</div>
 		</div>
-		<div class="day row" ng-repeat="day in weather">
-			<div class="col-md-3 col-lg-3">
-				{{day.day}}, {{day.month}} {{day.date}}
-			</div>
-			<div class="col-md-1 col-lg-1"></div>
-			<div class="col-md-2 col-lg-2">
-				{{day.temps.morn}}
-			</div>
-			<div class="col-md-2 col-lg-2">
-				{{day.temps.day}}
-			</div>
-			<div class="col-md-2 col-lg-2">
-				{{day.temps.eve}}
-			</div>
-			<div class="col-md-2 col-lg-2">
-				{{day.temps.night}}
+		<div id="forecast">
+			<div class="day row" ng-repeat="day in weather.list | orderBy: sortBy:reverse">
+				<div class="col-md-4 col-lg-4">
+					{{day.day}}, {{day.month}} {{day.date}}
+				</div>
+				<div class="col-md-2 col-lg-2">
+					{{day.morn | round}}
+				</div>
+				<div class="col-md-2 col-lg-2">
+					{{day.noon | round}}
+				</div>
+				<div class="col-md-2 col-lg-2">
+					{{day.eve | round}}
+				</div>
+				<div class="col-md-2 col-lg-2">
+					{{day.night | round}}
+				</div>
 			</div>
 		</div>
 	</div>

@@ -246,7 +246,15 @@ app.factory("CountryFactory", function ($http) {
         { name: 'Zambia', code: 'ZM' },
         { name: 'Zimbabwe', code: 'ZW' }
     ];
+    function mapCountry(code) {
+        var el = _.find(countries, function (obj) {
+            return obj.code === code;
+        });
+        console.log("mapcountry", el.name);
+        return el.name;
+    }
 	return {
-		countries: countries
+		countries: countries,
+        mapCountry: mapCountry
 	};
 });

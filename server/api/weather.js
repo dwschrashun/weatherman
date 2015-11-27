@@ -16,8 +16,9 @@ router.get("/", function (req, res, next) {
 				body += chunk;
 			});
 			response.on("end", function () {
-				console.log("result", body);
-				res.send("got a result", body);
+				var weatherObj = JSON.parse(body);
+				weatherObj.originalCity = req.query.city;
+				res.send("got a result", weatherObj);
 			});
 		});
 	}
