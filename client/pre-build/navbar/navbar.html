@@ -5,9 +5,8 @@
       <a href="#" ui-sref="home" class="navbar-brand">Weatherman</a>
     </div>
     <form class="navbar-form navbar-right" ng-submit="getWeather(city, country)">
-      <label class="navbar-text">Find Weather Forecasts For:</label>
       <input class="form-control" type="text" placeholder="City" ng-model="city" />
-      <select id="country-drop" ng-model="country">
+      <select id="country-drop" class="form-control" ng-model="country">
         <option selected>--Select Country--</option>
         <option ng-repeat="country in countries">{{country.name}}</option>
       </select>

@@ -2,6 +2,12 @@
 
 }
 
+#headline {
+	h1 {
+		text-align: right;
+	}
+}
+
 #header-row {
 	margin-right: 0px;
 	margin-left: 0px;
@@ -31,10 +37,15 @@
 
 .day {
 	width: 100%;
-	margin: 12px 0px;
+	margin: 6px 0px 0px 0px;
+	padding-bottom: 6px;
 	border-bottom: 1px green solid;
 	div {
 		text-align: center;
 	}
+}
+
+.day:last-of-type {
+	border: 0px
 }
 

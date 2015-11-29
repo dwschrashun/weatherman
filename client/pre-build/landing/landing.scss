@@ -1,0 +1,24 @@
+#landing-box {
+	margin-top: 100px;
+	padding: 50px;
+	background: white;
+	border: 1px white solid;
+	border-radius: 4px;
+	transition: 1s all;
+}
+
+h1 {
+	font-size: 100px;
+}
+
+#landing-container {
+	display: flex;
+	justify-content: center;
+}
+
+#landing-form {
+	button {
+		display: block;
+		margin: 30px auto 0px auto;
+	}
+}

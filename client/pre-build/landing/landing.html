@@ -1,12 +1,14 @@
-<div id="landing-box">
-	<h1>Weatherman</h1>
-	<h2>Find Weather For:</h2>
-	<form ng-submit="goToHome(city, country)">
-		<select id="country-drop" ng-model="country">
-        	<option selected>--Select Country--</option>
-       		<option ng-repeat="country in countries">{{country.name}}</option>
-      	</select>
-      	<input type="text" ng-model="city" placeholder="City" />
-      	<button type="submit" class="btn btn-default">Get Weather</button>
-	</form>
+<div id="landing-container">
+	<div id="landing-box">
+		<h1>Weatherman</h1>
+		<h2>Find Weather For:</h2>
+		<form id="landing-form" ng-submit="goToHome(city, country)">
+	      	<input class="form-control" type="text" ng-model="city" placeholder="City" />
+			<select class="form-control" id="country-drop" ng-model="country">
+	        	<option selected>--Select Country--</option>
+	       		<option ng-repeat="country in countries">{{country.name}}</option>
+	      	</select>
+	      	<button type="submit" class="btn btn-default">Get Weather</button>
+		</form>
+	</div>
 </div>

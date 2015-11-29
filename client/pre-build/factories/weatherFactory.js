@@ -29,7 +29,10 @@ app.factory("WeatherFactory", function ($http, CountryFactory) {
 		var route = `api/weather?city=${city}&countryCode=${countryCode}`;
 		return $http.get(route).then(function (response) {
 			console.log("factory data:", response.data);
-			return parseWeather(response.data);
+			if (response.data.list) {
+				return parseWeather(response.data);
+			}
+			else return null;
 		});
 	}
 	return {
