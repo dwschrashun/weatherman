@@ -3,7 +3,7 @@ var key;
 var http = require("http");
 module.exports = router;
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV !== 'production') {
 	key = require("../../secrets.json").openWMKey;
 }
 else {
