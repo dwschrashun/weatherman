@@ -9,6 +9,7 @@ router.get("/", function (req, res, next) {
 		if(!req.query.countryCode) {
 			req.query.countryCode = "";
 		}
+		var requestKey = key || process.env.OWMKey;
 		var queryString = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${req.query.city},${req.query.countryCode}&cnt=16&type=like&units=imperial&APPID=${key}`;
 		http.get(queryString, function (response) {
 			var body = "";
