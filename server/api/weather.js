@@ -25,7 +25,7 @@ router.get("/", function (req, res, next) {
 			response.on("end", function () {
 				var weatherObj = JSON.parse(body);
 				weatherObj.originalCity = req.query.city;
-				res.send("got a result", weatherObj);
+				res.json(weatherObj);
 			});
 		});
 	}
