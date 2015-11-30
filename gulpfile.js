@@ -7,7 +7,7 @@ var runSeq = require('run-sequence');
 var sass = require('gulp-sass');
 //var livereload = require('gulp-livereload');
 var rename = require('gulp-rename');
-var mocha = require('gulp-mocha');
+// var mocha = require('gulp-mocha');
 var babel = require('gulp-babel');
 
 // Live reload
@@ -30,8 +30,6 @@ gulp.task('default', function() {
 
     // Reload when a template (.html) file changes.
     gulp.watch(['client/**/*.html', 'server/*.html'], ['reload']);
-
-    gulp.watch(['server/**/*.js'], ['testServerJS']);
 
 });
 
@@ -68,11 +66,11 @@ gulp.task('buildCSS', function() {
 
 
 // Testing
-gulp.task('testServerJS', function() {
-    return gulp.src('./server/**/*.spec.js', {
-            read: false
-        })
-        .pipe(mocha({
-            reporter: 'spec'
-        }));
-});
+// gulp.task('testServerJS', function() {
+//     return gulp.src('./server/**/*.spec.js', {
+//             read: false
+//         })
+//         .pipe(mocha({
+//             reporter: 'spec'
+//         }));
+// });
