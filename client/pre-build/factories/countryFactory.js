@@ -250,7 +250,6 @@ app.factory("CountryFactory", function ($http) {
         var el = _.find(countries, function (obj) {
             return obj.code === code;
         });
-        console.log("mapcountry", el.name);
         return el.name;
     }
 	return {

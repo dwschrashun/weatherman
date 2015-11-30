@@ -11,7 +11,6 @@ else {
 }
 
 router.get("/", function (req, res, next) {
-	console.log("get", req.query);
 	if (req.query.city && req.query.countryCode) {
 		if(!req.query.countryCode) {
 			req.query.countryCode = "";

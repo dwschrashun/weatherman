@@ -1,6 +1,5 @@
 app.factory("WeatherFactory", function ($http, CountryFactory) {
 	function parseWeather (weather) {
-		console.log("raw weather", weather);
 		var parsedWeather = {
 			list: []
 		};
@@ -28,7 +27,6 @@ app.factory("WeatherFactory", function ($http, CountryFactory) {
 	function findWeather (city, countryCode) {
 		var route = `api/weather?city=${city}&countryCode=${countryCode}`;
 		return $http.get(route).then(function (response) {
-			console.log("factory data:", response.data);
 			if (response.data.list) {
 				return parseWeather(response.data);
 			}
