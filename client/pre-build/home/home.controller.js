@@ -16,13 +16,17 @@ app.filter("round", function () {
 });
 
 app.controller('HomeController', function($scope, getWeather, $stateParams) {
+	$scope.error = false;
 	function showModal () {
-
+		$scope.error = true;
 	}
 	if (getWeather.list) {
 		$scope.weather = getWeather;
 	}
 	else showModal();
+	$scope.closeModal = function () {
+		$scope.error = false;
+	};
 	$scope.city = $scope.weather.city;
 	$scope.country = $scope.weather.country;
   	$scope.$on("newWeather", function (event, weather) {
@@ -33,7 +37,7 @@ app.controller('HomeController', function($scope, getWeather, $stateParams) {
   	});
   	$scope.sortBy = "index";
   	$scope.reverse = false;
-  	$scope.changeSort = function (parameter) {
+  	$scope.changeSort = function (parameter, event) {
   		if (parameter === $scope.sortBy) $scope.reverse = !$scope.reverse;
   		$scope.sortBy = parameter;
   	};

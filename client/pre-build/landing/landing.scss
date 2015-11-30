@@ -1,14 +1,19 @@
 #landing-box {
 	margin-top: 100px;
 	padding: 50px;
-	background: white;
-	border: 1px white solid;
-	border-radius: 4px;
+	background-color: #3B3645;
+	border: 1px black solid;
+	border-radius: 8px;
 	transition: 1s all;
+	color: #9d9d9d;
 }
 
 h1 {
 	font-size: 100px;
+	animation-duration: 1s;
+  	animation-name: pulse;
+ 	animation-iteration-count: infinite;
+ 	animation-direction: alternate;
 }
 
 #landing-container {
@@ -17,8 +22,21 @@ h1 {
 }
 
 #landing-form {
+	input {
+		margin: 20px 0px;
+	}
 	button {
 		display: block;
 		margin: 30px auto 0px auto;
 	}
+}
+
+@keyframes pulse {
+	from {
+		color: #9d9d9d;
+	}
+	to {
+		color: #fff;
+	}
+
 }

@@ -1,11 +1,14 @@
 .navbar {
 	border-radius: 0;
+  background-color: #3B3645;
 }
 
 .logo {
   display: block;
   margin-right: 7px;
   margin-top: 8px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
   //display: block;
   width: 35px;
   // img {

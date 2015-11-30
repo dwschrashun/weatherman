@@ -1,3 +1,11 @@
+<div id="error-modal" ng-class="{'dimmer': error}">
+	<div>
+		<div ng-class="{shown: error}">
+			<h3>Could not find weather data for the country and city combination provided. Try again with a different city or country.</h3><br>
+			<a href="" ng-click="closeModal()">Close</a>
+		</div>
+	</div>
+</div>
 <navbar></navbar>
 <section id="home" class="container">
 	<div id="headline">
@@ -6,27 +14,27 @@
 	<div id="table" class="container">
 		<div class="row btn-group btn-group-justified" role="group" id="header-row">
 			<div class="col-md-4 col-lg-4 header-cell">
-				<div class="btn header-button" ng-click="changeSort('index')">
+				<div id="date" ng-class="{'selected-sort': sortBy === 'index' }" class="btn header-button" ng-click="changeSort('index', $event)">
 					<a href="">Date</a>
 				</div>
 			</div>
-			<div class="col-md-2 col-lg-2 header-cell">
-				<div class="btn header-button" ng-click="changeSort('morn')">
+			<div id="morn" class="col-md-2 col-lg-2 header-cell">
+				<div class="btn header-button" ng-class="{'selected-sort': sortBy === 'morn' }" ng-click="changeSort('morn', $event)">
 					<a href="">Morning</a>
 				</div>
 			</div>
 			<div class="col-md-2 col-lg-2 header-cell">
-				<div class="btn header-button" ng-click="changeSort('noon')">
+				<div id="noon" class="btn header-button" ng-class="{'selected-sort': sortBy === 'noon' }" ng-click="changeSort('noon', $event)">
 					<a href="">Daytime</a>
 				</div>
 			</div>
 			<div class="col-md-2 col-lg-2 header-cell">
-				<div class="btn header-button" ng-click="changeSort('eve')">
+				<div id="eve" class="btn header-button"  ng-class="{'selected-sort': sortBy === 'eve' }" ng-click="changeSort('eve', $event)">
 					<a href="">Evening</a>
 				</div>
 			</div>
 			<div class="col-md-2 col-lg-2 header-cell">
-				<div class="btn header-button" ng-click="changeSort('night')">
+				<div id="night" class="btn header-button"  ng-class="{'selected-sort': sortBy === 'night' }" ng-click="changeSort('night', $event)">
 					<a href="">Night</a>
 				</div>
 			</div>
@@ -37,16 +45,16 @@
 					{{day.day}}, {{day.month}} {{day.date}}
 				</div>
 				<div class="col-md-2 col-lg-2">
-					{{day.morn | round}}
+					{{day.morn | round}} &degF
 				</div>
 				<div class="col-md-2 col-lg-2">
-					{{day.noon | round}}
+					{{day.noon | round}} &degF
 				</div>
 				<div class="col-md-2 col-lg-2">
-					{{day.eve | round}}
+					{{day.eve | round}} &degF
 				</div>
 				<div class="col-md-2 col-lg-2">
-					{{day.night | round}}
+					{{day.night | round}} &degF
 				</div>
 			</div>
 		</div>
