@@ -5,19 +5,18 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var runSeq = require('run-sequence');
 var sass = require('gulp-sass');
-//var livereload = require('gulp-livereload');
+var livereload = require('gulp-livereload');
 var rename = require('gulp-rename');
-// var mocha = require('gulp-mocha');
 var babel = require('gulp-babel');
 
-// Live reload
-// gulp.task('reload', function() {
-//     livereload.reload();
-// });
+//Live reload
+gulp.task('reload', function() {
+    livereload.reload();
+});
 
 // Default
 gulp.task('default', function() {
-    //livereload.listen();
+    livereload.listen();
     gulp.start('build');
 
     gulp.watch(['client/pre-build/app.js', 'client/pre-build/**/*.js'], function() {
@@ -63,14 +62,3 @@ gulp.task('buildCSS', function() {
         .pipe(rename('build.css'))
         .pipe(gulp.dest('./client/build'));
 });
-
-
-// Testing
-// gulp.task('testServerJS', function() {
-//     return gulp.src('./server/**/*.spec.js', {
-//             read: false
-//         })
-//         .pipe(mocha({
-//             reporter: 'spec'
-//         }));
-// });
